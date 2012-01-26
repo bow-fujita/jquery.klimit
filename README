@@ -1,0 +1,47 @@
+jQuery KeyLimit Plugin for limiting key input on text forms.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+USAGE:
+  Add 'klimit-*' to class attribute of input[type='text'] element
+  which you want to limit key input. Just like this:
+
+    <input type='text' name='number' class='klimit-digit' />
+
+  Pre-defined 'klimit-*' classes are:
+    - klimit-digit
+    - klimit-hex
+    - klimit-lower
+    - klimit-upper
+    - klimit-alpha
+    - klimit-alnum
+    - klimit-graph
+    - klimit-mail
+
+  You can also make your custom rule. For instance, if you want allow
+  user to input only alphabets, numbers, dot(.) and underscore(_)
+  as username, this will be done with:
+
+    HTML
+      <input type='type' name='username' id='username' />
+
+    jQuery
+      $('input#username').klimit([$.KLIMIT.ALNUM, '._']);
+
+NOTE:
+  The key code map to convert a character into key code (event.keyCode)
+  is based on 101 US keyboard layout by default. If you want to alter
+  some of key codes, assign key code map to jQuery.KLIMIT.KEY_CODE_MAP
+  prior to jquery.klimit.js is loaded.
+  This plugin also provides 'jquery.klimit.kb109.js' which defines
+  key codes for 106/109 Japanese keyboard as an example. So if you
+  work with 106/109 Japanese keyboard, you should implement your HTML
+  as below:
+
+    <script src='jquery.js'></script>
+    <script src='jquery.klimit.kb109.js'></script>
+    <script src='jquery.klimit.js'></script>
+
