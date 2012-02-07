@@ -154,6 +154,7 @@
 			set_key_code(this.c, this.k);
 		});
 
+		jQuery.KLIMIT = jQuery.KLIMIT || {};
 		if(jQuery.KLIMIT.KEY_CODE_MAP) {
 			jQuery.each(jQuery.KLIMIT.KEY_CODE_MAP, function() {
 				reset_key_code(this.c, this.k);
@@ -234,7 +235,6 @@
 	}
 
 	// The following functions/variables are pubilc.
-	jQuery.KLIMIT = jQuery.KLIMIT || {};
 	jQuery.KLIMIT.DIGIT	= make_key('0123456789');
 	jQuery.KLIMIT.HEX	= concat_key(jQuery.KLIMIT.DIGIT, make_key('abcdefABCDEF'));
 	jQuery.KLIMIT.LOWER	= make_key('abcdefghijklmnopqrstuvwxyz');
